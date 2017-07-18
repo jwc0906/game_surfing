@@ -43571,11 +43571,11 @@
 
 	            return _react2.default.createElement(
 	                'div',
-	                null,
+	                { className: 'introPage' },
 	                _react2.default.createElement(
-	                    'h1',
-	                    null,
-	                    'Hello, World!'
+	                    'a',
+	                    { className: 'logo' },
+	                    'G surf'
 	                )
 	            );
 	        }
@@ -44244,10 +44244,11 @@
 
 	exports = module.exports = __webpack_require__(458)();
 	// imports
-
+	exports.push([module.id, "@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);", ""]);
+	exports.push([module.id, "@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);", ""]);
 
 	// module
-	exports.push([module.id, "body {\n    background-color: #ffffff;\n}\n\n/* Authentication */\n.auth {\n  margin-top: 50px;\n    text-align: center;\n}\n\n.logo {\n    text-align: center;\n    font-weight: 100;\n    font-size: 80px;\n    -webkit-user-select: none;\n    /* Chrome all / Safari all */\n    -moz-user-select: none;\n    /* Firefox all */\n    -ms-user-select: none;\n    /* IE 10+ */\n    user-select: none;\n    /* Likely future */\n}\n\na.logo {\n    color: #5B5B5B;\n}\n\na {\n    cursor: pointer;\n}\n\n.auth .card {\n    width: 400px;\n    margin: 0 auto;\n}\n\n\n@media screen and (max-width: 480px) {\n  .auth .card {\n    width: 100%;\n  }\n\n  .logo {\n    font-size: 60px;\n  }\n}\n\n.auth .header {\n    font-size: 18px;\n}\n\n.auth .row {\n    margin-bottom: 0px;\n}\n\n.auth .username {\n  margin-top: 0px;\n}\n\n.auth .btn {\n    width: 90%;\n}\n\n.auth .footer {\n    border-top: 1px solid #E9E9E9;\n    padding-bottom: 21px;\n}\n", ""]);
+	exports.push([module.id, "body {\n    background-color: #ffffff;\n    font-family:'Spoqa Han Sans', sans-serif;\n    height: 100%;\n}\n\na {\n    cursor: pointer;\n    text-decoration:none;\n}\n\n\n/*intro page*/\n.logo {\n  font-family:'Hanna', sans-serif;\n  color: black;\n  text-align: center;\n  font-size: 36px;\n  font-weight: 200;\n}\n.introPage {\n\n}\n\n\n/* Authentication */\n.auth {\n  margin-top: 50px;\n    text-align: center;\n}\n\n\n\n\n\n\n.auth .card {\n    width: 400px;\n    margin: 0 auto;\n}\n\n\n\n\n.auth .header {\n    font-size: 18px;\n}\n\n.auth .row {\n    margin-bottom: 0px;\n}\n\n.auth .username {\n  margin-top: 0px;\n}\n\n.auth .btn {\n    width: 90%;\n}\n\n.auth .footer {\n    border-top: 1px solid #E9E9E9;\n    padding-bottom: 21px;\n}\n", ""]);
 
 	// exports
 

@@ -7,9 +7,6 @@ body {
     background-color: #ffffff;
     font-family:'Spoqa Han Sans', sans-serif;
     height: 100%;
-
-
-
 }
 
 a {
@@ -17,51 +14,25 @@ a {
     text-decoration:none;
 }
 
-.logo {
+
+/*intro page*/
+.title {
   font-family:'Hanna', sans-serif;
   color: black;
-  text-align: center;
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 200;
 }
-
-
-/* Authentication */
-.auth {
-  margin-top: 50px;
-    text-align: center;
+.introPage {
+  background: url('http://localhost:4000/img/background.png') no-repeat  fixed;
+  background-size: cover;
+  height: 100%;
 }
 
-
-
-
-
-
+.auth {
+  margin-top: 50px;
+  text-align: center;
+}
 .auth .card {
     width: 400px;
     margin: 0 auto;
-}
-
-
-
-
-.auth .header {
-    font-size: 18px;
-}
-
-.auth .row {
-    margin-bottom: 0px;
-}
-
-.auth .username {
-  margin-top: 0px;
-}
-
-.auth .btn {
-    width: 90%;
-}
-
-.auth .footer {
-    border-top: 1px solid #E9E9E9;
-    padding-bottom: 21px;
 }
