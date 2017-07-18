@@ -1,4 +1,3 @@
-/*
 
 Parse.Cloud.define("getGameList", function(request, response) {
   console.log("getGameList comecome!!!!")

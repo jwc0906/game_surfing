@@ -1,11 +1,14 @@
 import Header from './Header';
+
 import Authentication from './Authentication';
-import GameList from './GameList';
-import SearchList from './SearchList';
-import GameCard from './GameCard';
-import GameFinder from './GameFinder';
 
-import MyGameList from './MyGameList';
-import MyGameCard from './MyGameCard';
+import Filter from './Filter';
+import BigGameCard from './BigGameCard';
+import BigList from './BigList';
 
-export { Header, Authentication, GameList, GameCard, GameFinder, SearchList , MyGameList, MyGameCard };
+import MyGames from './MyGames';
+import SmallGameCard from './SmallGameCard';
+import SmallList from './SmallList';
+
+
+export { Header, Authentication, Filter, BigGameCard, BigList, MyGames, SmallGameCard, SmallList};

@@ -1,6 +1,30 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+
+
+
 body {
-    background-color: #ECEFF1;
+    background-color: #ffffff;
+    font-family:'Spoqa Han Sans', sans-serif;
+    height: 100%;
+
+
+
 }
+
+a {
+    cursor: pointer;
+    text-decoration:none;
+}
+
+.logo {
+  font-family:'Hanna', sans-serif;
+  color: black;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 200;
+}
+
 
 /* Authentication */
 .auth {
@@ -8,27 +32,10 @@ body {
     text-align: center;
 }
 
-.logo {
-    text-align: center;
-    font-weight: 100;
-    font-size: 80px;
-    -webkit-user-select: none;
-    /* Chrome all / Safari all */
-    -moz-user-select: none;
-    /* Firefox all */
-    -ms-user-select: none;
-    /* IE 10+ */
-    user-select: none;
-    /* Likely future */
-}
 
-a.logo {
-    color: #5B5B5B;
-}
 
-a {
-    cursor: pointer;
-}
+
+
 
 .auth .card {
     width: 400px;
@@ -36,15 +43,7 @@ a {
 }
 
 
-@media screen and (max-width: 480px) {
-  .auth .card {
-    width: 100%;
-  }
 
-  .logo {
-    font-size: 60px;
-  }
-}
 
 .auth .header {
     font-size: 18px;
@@ -65,36 +64,4 @@ a {
 .auth .footer {
     border-top: 1px solid #E9E9E9;
     padding-bottom: 21px;
-}
-
-#sidenav{
-  padding: 5px;
-}
-
-.row .col .no{
-  padding-left:0px;
-}
-.row .col .mo{
-  padding-top: 4px;
-  padding-bottom: 1px;
-}
-.row .col .down{
-  margin-top: 30px;
-}
-.row .ca{
-  margin-bottom: 10px;
-}
-
-
-.card-panel .up{
-  padding-top: 0px;
-}
-
-#middle-title{
-  font-size: 40px;
-}
-
-.row .col .dd{
-  margin-top: 20px;
-  margin-left: 2px;
 }
