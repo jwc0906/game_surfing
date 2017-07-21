@@ -43541,6 +43541,8 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(179);
+
 	var _parse = __webpack_require__(274);
 
 	var _parse2 = _interopRequireDefault(_parse);
@@ -43561,21 +43563,210 @@
 
 	        var _this = _possibleConstructorReturn(this, (Authentication.__proto__ || Object.getPrototypeOf(Authentication)).call(this, props));
 
-	        _this.state = {};
+	        _this.state = {
+	            user_email: "",
+	            user_pw: "",
+	            user_name: ""
+	        };
 	        return _this;
 	    }
 
 	    _createClass(Authentication, [{
+	        key: 'handleChange',
+	        value: function handleChange(e) {
+	            var nextState = {};
+	            nextState[e.target.name] = e.target.value;
+	            this.setState(nextState);
+	        }
+	    }, {
+	        key: 'handleKeyPress',
+	        value: function handleKeyPress(e) {
+	            if (e.charCode === 13) {
+	                if (this.props.mode) {
+	                    //this.handleLogin();
+	                } else {
+	                        //this.handleRegister();
+	                    }
+	            }
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
+	            var signupInputBoxes = _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'input-field col l12' },
+	                    _react2.default.createElement(
+	                        'label',
+	                        null,
+	                        'Email'
+	                    ),
+	                    _react2.default.createElement('input', {
+	                        name: 'user_email',
+	                        type: 'email',
+	                        className: 'validate',
+	                        value: this.state.user_email,
+	                        onChange: this.handleChange
+	                    })
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'input-field col l12' },
+	                    _react2.default.createElement(
+	                        'label',
+	                        null,
+	                        'Password'
+	                    ),
+	                    _react2.default.createElement('input', {
+	                        name: 'user_pw',
+	                        type: 'password',
+	                        className: 'validate',
+	                        value: this.state.user_pw,
+	                        onChange: this.handleChange })
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'input-field col l12' },
+	                    _react2.default.createElement(
+	                        'label',
+	                        null,
+	                        '\uC774\uB984'
+	                    ),
+	                    _react2.default.createElement('input', {
+	                        name: 'user_name',
+	                        type: 'text',
+	                        className: 'validate',
+	                        value: this.state.user_name,
+	                        onChange: this.handleChange,
+	                        onKeyPress: this.handleKeyPress })
+	                )
+	            );
+
+	            var signupView = _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'card-content' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'row' },
+	                        signupInputBoxes,
+	                        _react2.default.createElement(
+	                            'a',
+	                            { onClick: this.handleRegister, className: 'waves-effect waves-light btn' },
+	                            '\uC81C\uCD9C'
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'footer' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'card-content' },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'right' },
+	                            '\uC774\uBBF8 \uAC00\uC785\uD558\uC168\uB098\uC694? ',
+	                            _react2.default.createElement(
+	                                _reactRouter.Link,
+	                                { to: '/signin' },
+	                                '\uB85C\uADF8\uC778 \uD558\uAE30'
+	                            )
+	                        )
+	                    )
+	                )
+	            );
+
+	            var signinInputBoxes = _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'input-field col l12' },
+	                    _react2.default.createElement(
+	                        'label',
+	                        null,
+	                        'Email'
+	                    ),
+	                    _react2.default.createElement('input', {
+	                        name: 'user_email',
+	                        type: 'email',
+	                        className: 'validate',
+	                        value: this.state.user_email,
+	                        onChange: this.handleChange
+	                    })
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'input-field col l12' },
+	                    _react2.default.createElement(
+	                        'label',
+	                        null,
+	                        'Password'
+	                    ),
+	                    _react2.default.createElement('input', {
+	                        name: 'user_pw',
+	                        type: 'password',
+	                        className: 'validate',
+	                        value: this.state.user_pw,
+	                        onChange: this.handleChange,
+	                        onKeyPress: this.handleKeyPress })
+	                )
+	            );
+
+	            var signinView = _react2.default.createElement(
+	                'div',
+	                { className: 'row' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'card-content' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'row' },
+	                        signinInputBoxes,
+	                        _react2.default.createElement(
+	                            'a',
+	                            { onClick: this.handleLogin, className: 'waves-effect waves-light btn' },
+	                            '\uC81C\uCD9C'
+	                        )
+	                    )
+	                )
+	            );
 
 	            return _react2.default.createElement(
 	                'div',
-	                { className: 'introPage' },
+	                { className: 'container' },
 	                _react2.default.createElement(
 	                    'a',
-	                    { className: 'logo' },
-	                    'G surf'
+	                    { className: 'title' },
+	                    'G surf haha'
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    '\uAC8C\uC784\uC744 \uCC3E\uB294 \uAC00\uC7A5 \uBE60\uB978 \uBC29\uBC95'
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'auth' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'card' },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'header blue white-text center' },
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'card-content' },
+	                                this.props.mode ? "회원가입" : "로그인"
+	                            )
+	                        ),
+	                        this.props.mode ? signupView : signinView
+	                    )
 	                )
 	            );
 	        }
@@ -43977,8 +44168,10 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                null,
-	                _react2.default.createElement(_components.Authentication, null)
+	                { className: 'introPage' },
+	                _react2.default.createElement(_components.Authentication, {
+	                    mode: true
+	                })
 	            );
 	        }
 	    }]);
@@ -44248,7 +44441,7 @@
 	exports.push([module.id, "@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);", ""]);
 
 	// module
-	exports.push([module.id, "body {\n    background-color: #ffffff;\n    font-family:'Spoqa Han Sans', sans-serif;\n    height: 100%;\n}\n\na {\n    cursor: pointer;\n    text-decoration:none;\n}\n\n\n/*intro page*/\n.logo {\n  font-family:'Hanna', sans-serif;\n  color: black;\n  text-align: center;\n  font-size: 36px;\n  font-weight: 200;\n}\n.introPage {\n\n}\n\n\n/* Authentication */\n.auth {\n  margin-top: 50px;\n    text-align: center;\n}\n\n\n\n\n\n\n.auth .card {\n    width: 400px;\n    margin: 0 auto;\n}\n\n\n\n\n.auth .header {\n    font-size: 18px;\n}\n\n.auth .row {\n    margin-bottom: 0px;\n}\n\n.auth .username {\n  margin-top: 0px;\n}\n\n.auth .btn {\n    width: 90%;\n}\n\n.auth .footer {\n    border-top: 1px solid #E9E9E9;\n    padding-bottom: 21px;\n}\n", ""]);
+	exports.push([module.id, "body {\n    background-color: #ffffff;\n    font-family:'Spoqa Han Sans', sans-serif;\n    height: 100%;\n}\n\na {\n    cursor: pointer;\n    text-decoration:none;\n}\n\n\n/*intro page*/\n.title {\n  font-family:'Hanna', sans-serif;\n  color: black;\n  font-size: 40px;\n  font-weight: 200;\n}\n.introPage {\n  background: url('http://localhost:4000/img/background.png') no-repeat  fixed;\n  background-size: cover;\n  height: 100%;\n}\n\n.auth {\n  margin-top: 50px;\n  text-align: center;\n}\n.auth .card {\n    width: 400px;\n    margin: 0 auto;\n}\n", ""]);
 
 	// exports
 

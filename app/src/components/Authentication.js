@@ -123,12 +123,10 @@ class Authentication extends React.Component {
       );
 
 
-
-
         return (
           <div className="container">
             <a className="title">G surf</a>
-            <a className="title">게임을 찾는 가장 빠른 방법</a>
+            <p>게임을 찾는 가장 빠른 방법</p>
 
             <div className="auth">
                 <div className="card">
