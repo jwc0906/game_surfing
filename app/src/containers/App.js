@@ -14,12 +14,12 @@ class App extends React.Component {
 
 
     render(){
-        let re = /(signin|signup)/;
+        let re = /(gamefeed|mygames)/;
         let isAuth = re.test(this.props.location.pathname);
 
         return (
             <div>
-                { isAuth ? undefined : <Header/>}
+                { isAuth ?  <Header/> : undefined}
                 { this.props.children }
             </div>
         );

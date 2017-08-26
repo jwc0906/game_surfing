@@ -1,6 +1,7 @@
 import React from 'react';
-
 import Parse from 'parse';
+
+import { SmallGameCard } from 'components';
 
 
 class SmallList extends React.Component {
@@ -17,7 +18,38 @@ class SmallList extends React.Component {
     render() {
 
         return (
-          <div>
+          <div className="row">
+            <div className="col m3">
+              <SmallGameCard/>
+            </div>
+            <div className="col m3">
+              <SmallGameCard/>
+            </div>
+            <div className="col m3">
+              <SmallGameCard/>
+            </div>
+            <div className="col m3">
+              <SmallGameCard/>
+            </div>
+            <div className="col m3">
+              <SmallGameCard/>
+            </div>
+            <div className="col m3">
+              <SmallGameCard/>
+            </div>
+            <div className="col m3">
+              <SmallGameCard/>
+            </div>
+            <div className="col m3">
+              <SmallGameCard/>
+            </div>
+            <div className="col m3">
+              <SmallGameCard/>
+            </div>
+            <div className="col m3">
+              <SmallGameCard/>
+            </div>
+            
           </div>
 
         );

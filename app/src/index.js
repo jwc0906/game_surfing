@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
-import { App, SignUp, SignIn, GameFeed, MyGames } from 'containers';
+import { App, SignUp, SignIn, GameFeed, MyGameFeed } from 'containers';
 
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
@@ -20,7 +20,7 @@ ReactDOM.render(
                 <Route path="signup" component={SignUp}/>
                 <Route path="signin" component={SignIn}/>
                 <Route path="gamefeed" component={GameFeed}/>
-                <Route path="mygames" component={MyGames}/>
+                <Route path="mygamefeed" component={MyGameFeed}/>
             </Route>
         </Router>
     </Provider>, rootElement

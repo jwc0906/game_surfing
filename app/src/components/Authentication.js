@@ -71,18 +71,20 @@ class Authentication extends React.Component {
       const signupView = (
         <div>
           <div className="card-content">
-               <div className="row">
+               <div className="row margin_botttom_zero">
                    { signupInputBoxes }
-                   <a onClick={this.handleRegister} className="waves-effect waves-light btn">제출</a>
+                   <a onClick={this.handleRegister} className="cyan accent-4 waves-effect waves-light btn">확인</a>
                </div>
            </div>
-           <div className="footer">
-               <div className="card-content">
-                   <div className="right" >
-                   이미 가입하셨나요? <Link to="/signin">로그인 하기</Link>
-                   </div>
+
+           <div className="card-content">
+             <div className="row margin_botttom_zero">
+               <div className="right" >
+               이미 가입하셨나요? <Link to="/signin">로그인 하기</Link>
                </div>
+             </div>
            </div>
+
          </div>
      );
 
@@ -112,31 +114,41 @@ class Authentication extends React.Component {
       );
 
       const signinView = (
-          <div className="row">
-              <div className="card-content">
-                  <div className="row">
-                      { signinInputBoxes }
-                      <a onClick={this.handleLogin} className="waves-effect waves-light btn">제출</a>
-                  </div>
+          <div>
+
+            <div className="card-content">
+                <div className="row margin_botttom_zero">
+                    { signinInputBoxes }
+                    <a onClick={this.handleLogin} className="cyan accent-4 waves-effect waves-light btn">확인</a>
+                </div>
+            </div>
+
+            <div className="card-content">
+              <div className="row margin_botttom_zero">
+                <div className="right" >
+                아직 가입하지 않았나요? <Link to="/signup">회원가입 하기</Link>
+                </div>
               </div>
+            </div>
           </div>
       );
 
 
         return (
-          <div className="container">
-            <a className="title">G surf</a>
-            <p>게임을 찾는 가장 빠른 방법</p>
+          <div className="container intro">
+            <Link className="title" to="/signup">G <span className="cyan-text text-accent-4">surf</span></Link>
 
+            <p className="sub_title">원하는 게임을 찾는 가장 빠른 방법</p>
             <div className="auth">
                 <div className="card">
-                    <div className="header blue white-text center">
-                        <div className="card-content">{this.props.mode ? "회원가입":"로그인" }</div>
+                    <div className="header cyan accent-1 center">
+                        <div className="card-content">{this.props.mode ? "간단한 회원가입 후 시작하기":"로그인" }</div>
                     </div>
                     {this.props.mode ? signupView : signinView }
 
                 </div>
             </div>
+
 
           </div>
 

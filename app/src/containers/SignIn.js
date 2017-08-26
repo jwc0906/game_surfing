@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import {Authentication} from 'components'
 
 
 class SignIn extends React.Component {
@@ -15,8 +16,10 @@ class SignIn extends React.Component {
 
     render() {
         return (
-            <div>
-                
+            <div className="authenticationPage">
+              <Authentication
+                mode={false}
+              />
             </div>
         );
     }

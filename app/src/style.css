@@ -2,9 +2,11 @@
 @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
 
 
-
+html{
+  font-size: 13px;
+}
 body {
-    background-color: #ffffff;
+    background-color: #e8f5e9;
     font-family:'Spoqa Han Sans', sans-serif;
     height: 100%;
 }
@@ -14,25 +16,365 @@ a {
     text-decoration:none;
 }
 
+.container .row{
+  margin-left: 0rem;
+  margin-right: 0rem;
+}
 
-/*intro page*/
+.row{
+  margin-bottom: 0.2rem;
+}
+hr{
+  border-top:1px solid #e8eaf6;
+  border-bottom:1px solid #c5cae9;
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+ .top hr{
+  margin-top: 0.2rem;
+}
+
+
+
+/*authenticatoin page*/
+
 .title {
   font-family:'Hanna', sans-serif;
   color: black;
-  font-size: 40px;
+  font-size: 3rem;
   font-weight: 200;
 }
-.introPage {
-  background: url('http://localhost:4000/img/background.png') no-repeat  fixed;
+.sub_title{
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 200;
+  margin: 3rem;
+}
+
+.authenticationPage {
+  background: url('http://localhost:4000/img/background.png') no-repeat local;
   background-size: cover;
-  height: 100%;
+  height: 55rem;
 }
 
 .auth {
-  margin-top: 50px;
+  margin-top: 5rem;
   text-align: center;
 }
 .auth .card {
-    width: 400px;
+    width: 25rem;
     margin: 0 auto;
+}
+.auth .header{
+  font-size: 1.2rem;
+  font-weight: 300;
+  height: 3rem;
+}
+.auth .card .header .card-content{
+  padding: 0.5rem;
+}
+.auth .card .card-content{
+  padding-top: 0rem;
+  padding-bottom: 0.1rem;
+}
+.margin_botttom_zero{
+  margin-bottom: 0.5rem;
+}
+
+/*Header*/
+
+.nav-menu{
+  color: black;
+  font-size: 1.1rem;
+}
+#dropdown1{
+  margin-top: 55px;
+
+
+}
+.dropdown-content li>a, .dropdown-content li>span{
+  font-size: 1.1rem;
+  padding: 0.7rem;
+  color: black;
+}
+.dropdown-content li{
+  min-height:2.4rem;
+}
+
+
+/*Filter*/
+.filter .card {
+  position: fixed;
+
+  width: 17%;
+}
+.filter .collapsible{
+  border-width: 0rem;
+}
+.filter-header{
+  background-color:#00b8d4;
+  color: white;
+  margin: 0rem;
+  height: 3rem;
+  text-align: center;
+  font-size: 1.7rem;
+  padding: 0.2rem;
+}
+.filter-btn-black{
+  text-align: center;
+  color: black;
+}
+.filter-btn-blue{
+  text-align: center;
+  color: #00b8d4;
+}
+.collapsible-body .row .col{
+  padding: 0.2rem;
+}
+.filter-btn-black:hover, .filter-btn-blue:hover{
+  background-color: #eeeeee;
+}
+
+.container .collapsible-body .row{
+  margin: 0rem;
+  background-color: #fafafa;
+  font-size: 0.9rem;
+}
+.filter .collapsible{
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+
+}
+
+/*BigGameCard*/
+.BigGameCard .card .card-content{
+  padding: 0.6rem;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+}
+.BigGameCard .card-title{
+  font-weight: 600;
+  margin: 0rem;
+  padding-left: 1rem;
+  padding-top: 0.4rem;
+  margin-bottom: 0rem;
+}
+
+.BigGameCard .row .col{
+  padding: 0rem;
+  border-radius: 5px;
+}
+.BigGameCard img.responsive-img{
+  border-radius: 3px;
+}
+
+.BigGameCard .video-container{
+  padding-right: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.BigGameCard .row .col .m6{
+  text-align: center;
+  background-color: #00b8d4;
+  color: white;
+  width: 45%;
+  margin: 2.5%;
+  border-radius: 15%;
+}
+
+.good-unclick .btn{
+  margin-left: 0.6rem;
+  margin-bottom: 0.6rem;
+  margin-top:0rem;
+  background-color: white;
+  border-color: #00b8d4;
+  border-style: solid;
+  border-width: 0.1rem;
+  color: #00b8d4;
+  font-weight: 400;
+  height: 30px;
+  line-height: 30px;
+}
+.good-click .btn{
+  margin-left: 0.6rem;
+  margin-bottom: 0.6rem;
+  margin-top:0rem;
+  background-color: #00b8d4;
+  color: #white;
+  font-weight: 400;
+  height: 30px;
+  line-height: 30px;
+}
+.bad-unclick .btn{
+  margin-left: 0.6rem;
+  margin-bottom: 0.6rem;
+  margin-top:0rem;
+  background-color: white;
+  border-color: #e53935;
+  border-style: solid;
+  border-width: 0.1rem;
+  color: #e53935;
+  font-weight: 400;
+  height: 30px;
+  line-height: 30px;
+}
+.bad-click .btn{
+  margin-left: 0.6rem;
+  margin-bottom: 0.6rem;
+  margin-top:0rem;
+  background-color: #e53935;
+  color: #white;
+  font-weight: 400;
+  height: 30px;
+  line-height: 30px;
+}
+.star-btn{
+  margin-left: 0.6rem;
+  margin-bottom: 0.6rem;
+  margin-top:0rem;
+  background-color: white;
+  border-color: #ffd600;
+  border-style: solid;
+  border-radius: 2px;
+  border-width: 0.1rem;
+  color: #f57f17;
+  font-weight: 400;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  height: 30px;
+  width: 150px;
+  line-height: 30px;
+  text-align: center;
+  text-indent: -43px;
+  overflow: hidden;
+}
+
+.star-btn  :hover{
+  text-indent: 0px;
+  line-height: 37px;
+}
+
+
+
+.rap{
+  padding-bottom:10px;
+}
+.rap :hover{
+  padding-bottom:0px;
+}
+
+/*My Game*/
+.myGameHead .card{
+  border-radius: 5px;
+}
+
+.myGameHead p{
+  font-size: 2rem;
+  font-weight: 500;
+  margin:0rem;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-top: 1.5rem;
+
+  /*background: linear-gradient(-135deg, #e0f7fa 10%, white 90%) fixed;*/
+}
+.myGameHead .nav-wrapper{
+  height: 3rem;
+}
+.myGameHead nav{
+  height: 3rem;
+  line-height: 3rem;
+}
+.myGameHead .nav-wrapper ul a{
+  height: 3rem;
+}
+
+/*Small Game Card*/
+.SmallGameCard .card .card-content{
+  padding: 0rem;
+  padding-left: 1rem;
+  line-height: 1rem;
+  font-size: 1rem;
+}
+.SmallGameCard .card .card-title{
+  font-size: 1.5rem;
+}
+
+.star-fix{
+  margin-bottom: 0.6rem;
+  margin-top:0rem;
+  background-color: white;
+  border-color: #ffd600;
+  border-style: solid;
+  border-radius: 2px;
+  border-width: 0.1rem;
+  color: #f57f17;
+  font-weight: 400;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  height: 30px;
+  width: 150px;
+  line-height: 37px;
+  text-align: center;
+}
+
+.good-unclick-small .btn{
+  margin: 0.1rem;
+  margin-bottom: 0.2rem;
+  margin-top:0rem;
+  background-color: white;
+  border-color: #00b8d4;
+  border-style: solid;
+  border-width: 0.1rem;
+  color: #00b8d4;
+  font-weight: 400;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 0.9rem;
+}
+.good-click-small .btn{
+  margin: 0.1rem;
+  margin-bottom: 0.2rem;
+  margin-top:0rem;
+  background-color: #00b8d4;
+  color: #white;
+  font-weight: 400;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 0.9rem;
+}
+.bad-unclick-small .btn{
+  margin: 0.1rem;
+  margin-bottom: 0.2rem;
+  margin-top:0rem;
+  background-color: white;
+  border-color: #e53935;
+  border-style: solid;
+  border-width: 0.1rem;
+  color: #e53935;
+  font-weight: 400;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 0.9rem;
+}
+.bad-click-small .btn{
+  margin: 0.1rem;
+  margin-bottom: 0.2rem;
+  margin-top:0rem;
+  background-color: #e53935;
+  color: #white;
+  font-weight: 400;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 0.9rem;
+}
+.small-action .row .col{
+  padding: 0 0rem;
+  text-align: center;
+}
+.SmallGameCard .card .card-action{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.1rem;
 }

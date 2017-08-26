@@ -17,7 +17,7 @@ class SignUp extends React.Component {
 
     render() {
         return (
-            <div className="introPage">
+            <div className="authenticationPage">
               <Authentication
                 mode={true}
               />

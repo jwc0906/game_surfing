@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { MyGames } from 'components';
 
 
-class MyGames extends React.Component {
+class MyGameFeed extends React.Component {
 
     constructor(props) {
         super(props);
@@ -15,8 +16,8 @@ class MyGames extends React.Component {
 
     render() {
         return (
-            <div>
-
+            <div className="container">
+              <MyGames/>
             </div>
         );
     }
@@ -34,4 +35,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(MyGames);
+export default connect(mapStateToProps, mapDispatchToProps)(MyGameFeed);

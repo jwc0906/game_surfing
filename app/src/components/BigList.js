@@ -1,7 +1,6 @@
 import React from 'react';
-
 import Parse from 'parse';
-
+import { BigGameCard } from 'components';
 
 class BigList extends React.Component {
 
@@ -18,6 +17,9 @@ class BigList extends React.Component {
 
         return (
           <div>
+            <BigGameCard/>
+            <BigGameCard/>
+
           </div>
 
         );
