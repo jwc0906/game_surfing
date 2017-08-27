@@ -21,7 +21,7 @@ class Header extends React.Component {
           <ul id="dropdown1" className="dropdown-content">
             <li><Link href="/mygamefeed">내 게임</Link></li>
             <li className="divider"></li>
-            <li><a href="#logout">로그아웃</a></li>
+            <li><a onClick={this.props.onLogout}>로그아웃</a></li>
           </ul>
 
           <div className="navbar-fixed">
@@ -49,9 +49,11 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
+  onLogout: React.PropTypes.func
 };
 
 Header.defaultProps = {
+  onLogout: () => { console.error("logout function not defined");}
 }
 
 export default Header;

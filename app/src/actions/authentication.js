@@ -5,10 +5,9 @@ import {
     AUTH_REGISTER,
     AUTH_REGISTER_SUCCESS,
     AUTH_REGISTER_FAILURE,
-    AUTH_GET_STATUS,
-    AUTH_GET_STATUS_SUCCESS,
-    AUTH_GET_STATUS_FAILURE,
-    AUTH_LOGOUT
+    AUTH_LOGOUT,
+    AUTH_LOGOUT_SUCCESS,
+    AUTH_LOGOUT_FAILURE
 } from './ActionTypes';
 import Parse from 'parse';
 
@@ -18,19 +17,22 @@ Parse.serverURL = 'http://localhost:1337/parse'
 /* ====== AUTH ====== */
 
 /* LOGIN */
-export function loginRequest(username, password) {
+export function loginRequest(userid, password) {
     return (dispatch) => {
             dispatch(login());
 
-            return Parse.User.logIn(username, password, {
+            return Parse.User.logIn(userid, password, {
               success: function(user) {
                 console.log("login sucess")
-                dispatch(loginSuccess(username));
+                dispatch(loginSuccess(user));
+                
+                return true;
               },
               error: function(user, error) {
-                console.log("login fail")
-                Materialize.toast("Incorrect username or password", 3000);
+                console.log("login error")
+                Materialize.toast("잘못된 아이디 또는 비밀번호 입니다.", 3000);
                 dispatch(loginFailure());
+                return false;
               }
             })
 
@@ -43,10 +45,10 @@ export function login() {
     };
 }
 
-export function loginSuccess(username) {
+export function loginSuccess(userid) {
     return {
         type: AUTH_LOGIN_SUCCESS,
-        username
+        userid
     };
 }
 
@@ -57,24 +59,39 @@ export function loginFailure() {
 }
 
 /* REGISTER */
-export function registerRequest(username, password, email) {
+export function registerRequest(userid, password, passwordCheck,email) {
     return (dispatch) => {
         // inform register API is starting
         dispatch(register());
 
-        var user = new Parse.User();
-        user.set("username", username);
-        user.set("password", password);
-        user.set("email", email);
+        if (password!=passwordCheck){
+          console.log("password: "+password)
+          console.log("passwordCheck: "+passwordCheck)
+          return new Promise(
+              (resolve, reject)=> {
+                  dispatch(registerFailure())
+                  Materialize.toast("비밀번호와 비밀번호 확인이 일치하지 않습니다.", 5000);
+                  resolve();
+              }
+          );
+        }else{
+          var user = new Parse.User();
+          user.set("username", userid);
+          user.set("password", password);
+          user.set("email", email);
 
-        return user.signUp(null, {
-            success: function(user) {
-              dispatch(registerSuccess());
-            },
-            error: function(user, error) {
-                dispatch(registerFailure(error.code));
-            }
-        });
+          return user.signUp(null, {
+              success: function(user) {
+                dispatch(registerSuccess());
+              },
+              error: function(user, error) {
+                  Materialize.toast("회원가입 실패하였습니다."+"("+error.message+")", 5000);
+                  dispatch(registerFailure(error.code));
+              }
+          });
+        }
+
+
     };
 }
 
@@ -99,60 +116,34 @@ export function registerFailure(error) {
 }
 
 
-/* GET STATUS */
-export function getStatusRequest() {
-    return (dispatch) => {
-        dispatch(getStatus())
-
-        return Parse.User.currentAsync().then((user)=>{
-          if(user){
-            dispatch(getStatusSuccess(user.username));
-            console.log("currentUser:")
-            console.log(user)
-          }else{
-            dispatch(getStatusFailure());
-            console.log("else "+user)
-          }
-        })
-
-
-
-    };
-}
-
-export function getStatus() {
-    return {
-        type: AUTH_GET_STATUS
-    };
-}
-
-export function getStatusSuccess(username) {
-    return {
-        type: AUTH_GET_STATUS_SUCCESS,
-        username
-    };
-}
-
-export function getStatusFailure() {
-    return {
-        type: AUTH_GET_STATUS_FAILURE
-    };
-}
-
 /* Logout */
 export function logoutRequest() {
     return (dispatch) => {
-        return Parse.User.logOut().then(() => {
             dispatch(logout());
+        return Parse.User.logOut().then(() => {
+            dispatch(logoutSuccess());
         }).catch((err)=>{
-          console.log(err)
-        }
-        );
+            dispatch(logoutFailure())
+        });
     };
 }
+
+
 
 export function logout() {
     return {
         type: AUTH_LOGOUT
+    };
+}
+
+export function logoutSuccess() {
+    return {
+        type: AUTH_LOGOUT_SUCCESS
+    };
+}
+
+export function logoutFailure() {
+    return {
+        type: AUTH_LOGOUT_FAILURE
     };
 }

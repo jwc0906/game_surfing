@@ -10,11 +10,38 @@ class Authentication extends React.Component {
             super(props);
 
             this.state = {
-              user_email: "",
+              user_id: "",
               user_pw: "",
-              user_name: ""
+              user_pw_check: "",
+              user_email: ""
             };
+
+            this.handleChange = this.handleChange.bind(this);
+            this.handleLogin = this.handleLogin.bind(this);
+            this.handleRegister = this.handleRegister.bind(this);
+            this.handleKeyPress = this.handleKeyPress.bind(this);
         }
+
+    handleLogin() {
+        let id = this.state.user_id;
+        let pw = this.state.user_pw;
+
+        this.props.onLogin(id, pw);
+    }
+
+    handleRegister() {
+        let id = this.state.user_id;
+        let pw = this.state.user_pw;
+        let pw_check = this.state.user_pw_check;
+        let email = this.state.user_email;
+
+        this.props.onRegister(id, pw, pw_check, email).then(
+            (success) => {
+                if(!success) {
+                }
+            }
+        );
+    }
 
     handleChange(e) {
         let nextState = {};
@@ -24,9 +51,9 @@ class Authentication extends React.Component {
     handleKeyPress(e) {
         if(e.charCode ===13 ){
             if(this.props.mode) {
-                //this.handleLogin();
+              this.handleRegister();
             } else {
-                //this.handleRegister();
+              this.handleLogin();
             }
         }
     }
@@ -37,17 +64,17 @@ class Authentication extends React.Component {
       const signupInputBoxes = (
           <div>
               <div className="input-field col l12">
-                  <label>Email</label>
+                  <label>아이디</label>
                   <input
-                  name="user_email"
-                  type="email"
+                  name="user_id"
+                  type="text"
                   className="validate"
-                  value={this.state.user_email}
+                  value={this.state.user_id}
                   onChange={this.handleChange}
-                  />
+                  onKeyPress={this.handleKeyPress}/>
               </div>
               <div className="input-field col l12">
-                  <label>Password</label>
+                  <label>비밀번호</label>
                   <input
                   name="user_pw"
                   type="password"
@@ -56,14 +83,23 @@ class Authentication extends React.Component {
                   onChange={this.handleChange}/>
               </div>
               <div className="input-field col l12">
-                  <label>이름</label>
+                  <label>비밀번호 확인</label>
                   <input
-                  name="user_name"
-                  type="text"
+                  name="user_pw_check"
+                  type="password"
                   className="validate"
-                  value={this.state.user_name}
+                  value={this.state.user_pw_check}
+                  onChange={this.handleChange}/>
+              </div>
+              <div className="input-field col l12">
+                  <label>이메일</label>
+                  <input
+                  name="user_email"
+                  type="email"
+                  className="validate"
+                  value={this.state.user_email}
                   onChange={this.handleChange}
-                  onKeyPress={this.handleKeyPress}/>
+                  />
               </div>
           </div>
       );
@@ -91,12 +127,12 @@ class Authentication extends React.Component {
       const signinInputBoxes = (
           <div>
               <div className="input-field col l12">
-                  <label>Email</label>
+                  <label>아이디</label>
                   <input
-                  name="user_email"
-                  type="email"
+                  name="user_id"
+                  type="text"
                   className="validate"
-                  value={this.state.user_email}
+                  value={this.state.user_id}
                   onChange={this.handleChange}
                   />
               </div>
@@ -157,9 +193,15 @@ class Authentication extends React.Component {
 }
 
 Authentication.propTypes = {
+  mode: React.PropTypes.bool,
+  onLogin: React.PropTypes.func,
+  onRegister: React.PropTypes.func
 };
 
 Authentication.defaultProps = {
+  mode: true,
+  onLogin: (id, pw) => { console.error("onLogin not defined"); },
+  onRegister: (id, pw, email) => { console.error("onRegister not defined"); }
 }
 
 export default Authentication;
